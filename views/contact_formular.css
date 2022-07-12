@@ -1,0 +1,163 @@
+.contact-formular-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #000000;
+}
+
+
+.contact-formular-container03 {
+  width: 90%;
+  height: 729px;
+  display: flex;
+  z-index: 100;
+  max-width: 1320px;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);
+  margin-top: auto;
+  align-items: flex-start;
+  border-radius: var(--dl-radius-radius-radius75);
+  margin-bottom: var(--dl-space-space-tripleunit);
+  flex-direction: column;
+  background-color: var(--dl-color-secondary-300);
+}
+
+.contact-formular-container05 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact-formular-container06 {
+  display: flex;
+  align-items: center;
+  margin-right: var(--dl-space-space-unit);
+  flex-direction: row;
+  justify-content: center;
+}
+.contact-formular-form {
+  width: 200px;
+  height: 100px;
+}
+.contact-formular-container07 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  margin-top: var(--dl-space-space-tripleunit);
+  align-items: center;
+  margin-bottom: var(--dl-space-space-tripleunit);
+  flex-direction: column;
+}
+.contact-formular-text-title {
+  color: var(--dl-color-pimary-800);
+  text-align: center;
+  font-size: 32px;
+}
+.contact-formular-text-title2 {
+  color: var(--dl-color-human-pink);
+  font-size:1rem;
+  margin-top:1rem;
+  
+}
+.contact-formular-container-content {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact-formular-text-content {
+  color: var(--dl-color-secondary-500);
+  width: 80%;
+  text-align: center;
+  font-weight: 600;
+  margin-left: var(--dl-space-space-halfunit);
+  margin-right: var(--dl-space-space-halfunit);
+  padding-left: var(--dl-space-space-triplequarter);
+  padding-right: var(--dl-space-space-triplequarter);
+}
+.contact-formular-text09 {
+  color: var(--dl-color-secondary-500);
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  font-weight: 600;
+  margin-left: var(--dl-space-space-halfunit);
+  margin-right: var(--dl-space-space-halfunit);
+  padding-left: var(--dl-space-space-triplequarter);
+  padding-right: var(--dl-space-space-triplequarter);
+}
+.contact-formular-container09 {
+  flex: 0 0 auto;
+  display: flex;
+  margin-top: var(--dl-space-space-tripleunit);
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact-formular-icon {
+  fill: var(--dl-color-secondary-500);
+  width: 18px;
+  height: 18px;
+}
+.contact-formular-container10 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact-formular-container11 {
+  flex: 0 0 auto;
+  display: flex;
+  margin-top: var(--dl-space-space-unit);
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact-formular-icon2 {
+  fill: var(--dl-color-secondary-500);
+  width: 18px;
+  height: 18px;
+}
+.contact-formular-container12 {
+  flex: 0 0 auto;
+  width: 90%;
+  height: 0.5px;
+  display: flex;
+  opacity: 0.5;
+  margin-top: var(--dl-space-space-doubleunit);
+  align-items: flex-start;
+  margin-bottom: var(--dl-space-space-doubleunit);
+  flex-direction: column;
+  background-color: var(--dl-color-gray-700);
+}
+.contact-formular-text-contact {
+  color: var(--dl-color-pimary-800);
+  width: 75%;
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 300;
+  line-height: 1.625;
+  margin-bottom: var(--dl-space-space-unit);
+}
+.contact-formular-text15 {
+  color: var(--dl-color-pimary-500);
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.contact-formular-text15:hover {
+  color: var(--dl-color-pimary-300);
+}
+@media(max-width: 991px) {
+  .contact-formular-container04 {
+    flex-direction: column;
+  }
+}
