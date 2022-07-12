@@ -1,0 +1,146 @@
+.card.info{
+    box-shadow: 0 4px 8px rgba(255,255,255,0.8);
+    background-color: var(--dl-color-background-detail);
+    transition:0.3s;
+    border-radius:10px;
+    width:600px;
+    padding:10px;
+    margin-right:auto;
+    margin-left:auto;
+    z-index: 800;
+    
+}
+.card.info:hover{
+    box-shadow:0 8px 16px 0 rgba(255,255,255,0.8)
+}
+
+
+.column{
+    float:left;
+    width:50%;
+    padding:5px;
+}
+.row::after{
+    content:'';
+    clear:both;
+    display:table;
+
+}
+/* Alternatively using flexbox*/
+/*
+.row{
+    display:flex;
+}
+.column{
+    flex:50%;
+    padding:5%
+}*/
+
+.content{
+    background-color: white;
+    padding:10px;
+    border-radius:10px;
+
+    
+}
+.description{
+    max-height:40vh;
+    min-height:30vh;
+    content:wrap;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-color:#c9d7f8;
+    border-width:1px;
+    border-radius: 5px;
+    
+    
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar{
+    width:auto;
+}
+
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background:#c5cbd3;
+    border-radius:5px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#c9d7f8 ;
+} 
+
+p{
+    color:black;
+    font-size:1rem;
+    line-height: 1.2;
+    margin:3px;
+    font-family: Fira Sans;
+}
+
+.header{
+    font-size:1.8rem;
+    color:var(--dl-color-header);
+    font-family: Fira Sans;
+}
+
+/* Styling the Link*/
+.link{
+    font-size:1rem;
+    color:var(--dl-color-header);
+    position: relative;
+    font-family: Fira Sans;
+}
+
+.link:after {
+    content:' → ';
+    opacity: 0;  
+    transition: 0.5s;
+    color:var(--dl-color-header)
+  }
+
+.link::before{
+    content: "";
+  position: absolute;
+  display: block;
+  width: 95%;
+  height: 0.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--dl-color-header);
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform 0.3s ease;
+}
+
+.link:hover::before{
+   transform: scale(1); 
+}
+
+.link:hover{
+    padding-right: 24px;
+    padding-left:8px;
+  }
+
+.link:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  
+
+.card-image{
+    max-width:250px;
+    width:100%;
+    height:auto;
+    margin-right:auto;
+    margin-left:auto;
+    border-radius:10px;
+}
+
+
+
+
+

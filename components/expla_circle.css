@@ -1,0 +1,20 @@
+.expla_circle-container {
+  width: 260px;
+  height: 260px;
+  display: flex;
+  position: relative;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  transition: 0.3s;
+  align-items: center;
+  border-radius: var(--dl-radius-radius-radius75);
+  margin-bottom: 1px;
+  flex-direction: column;
+  background-color: #6adee0;
+  border-top-left-radius: var(--dl-radius-radius-round);
+  border-top-right-radius: var(--dl-radius-radius-round);
+  border-bottom-left-radius: var(--dl-radius-radius-round);
+  border-bottom-right-radius: var(--dl-radius-radius-round);
+}
+.expla_circle-container:hover {
+  opacity: 0;
+}

@@ -1,0 +1,141 @@
+.homepage-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #000000;
+    overflow-x: hidden;
+    overflow-y:hidden;
+  }
+  .homepage-container-woman {
+    
+    left: 452px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    position: absolute;
+    transition: 0.3s;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .homepage-container-woman-inner {
+    top: -21px;  /* Will have to factor out later*/
+    left: -28px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    z-index: 100;
+    position: absolute;
+    transition: 0.3s;
+    border-radius: var(--dl-radius-radius-round);
+    background-color: var(--dl-color-pimary-900);
+  }
+/* Add different background colors to the containers based on which category they belong to*/
+  .homepage-container-woman-inner.science{
+    background-color: var(--dl-color-science-blue);
+  }
+
+  .homepage-container-woman-inner.medicine{
+    background-color: var(--dl-color-medicine-white);
+  }
+
+  .homepage-container-woman-inner.human{
+    background-color: var(--dl-color-human-pink);
+  }
+
+  .homepage-container-woman-inner.politics{
+    background-color: var(--dl-color-politics-red);
+  }
+  .homepage-container-woman-inner.other{
+    background-color: var(--dol-color-other-light-blue);
+  }
+
+
+  .homepage-container-woman-inner:hover {
+    background-color: rgba(94, 189, 214, 0);
+    cursor:pointer;
+  }
+
+
+  .homepage-text-woman-header {
+    height: 37px;
+    color:white;
+    
+    line-height: 1.25;
+    border-radius: var(--dl-radius-radius-radius4);
+  }
+
+  .homepage-text-woman-description{
+    font-size: 0.75rem;
+    color:aliceblue;
+    align-self: flex-end;
+    font-family: Fira Sans;
+    line-height: 1.1;
+  }
+/* For the woman image */
+  .homepage-image-woman {
+    top: 0px;
+    left: 0px;
+    width: 86px;
+    height: 113px;
+    z-index: 100;
+    position: absolute;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .homepage-image-woman:hover {
+    left: 0px;
+    width: 150px;
+  }
+  /*For the icon image*/
+  .homepage-image-icon-woman {
+    top: 7px;
+    left: 16px;
+    width: 117px;
+    height: 122px;
+    z-index: 106;
+    position: absolute;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .homepage-image-icon-woman:hover {
+    opacity: 0;
+  }
+  /* Link to Wikipedia */
+  .homepage-link-woman {
+  font-size: 0.85rem;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+  }
+  .a.homepage-link-woman:hover {
+  color: #d671d6;
+  }
+
+  .homepage-woman-image-icon.hedy-lamarr {
+    top: -26px;
+    left: -21px;
+    width: 163px;
+    height: 168px;
+    z-index: 106;
+    position: absolute;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  
+  /**{
+    
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  }*/
+
+
+ 
+ 
