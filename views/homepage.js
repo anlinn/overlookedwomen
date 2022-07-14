@@ -2,15 +2,13 @@ import React from "react";
 import axios from "axios";
 import Collapsible from "react-collapsible";
 import { Helmet } from "react-helmet";
-
+import { motion } from "framer-motion/dist/es/index";
 import Header from "../components/header";
 import Footer2 from "../components/footer_2";
 import "./homepage.css";
-import ContainerWoman from "../components/containerWoman";
+
 import WomanDetail from "../components/WomanDetails";
 import WomanList from "../components/WomanList";
-import { Radio } from "semantic-ui-react";
-import PrimaryButton from "../components/primary-button";
 
 class Homepage extends React.Component {
   state = {
@@ -22,6 +20,7 @@ class Homepage extends React.Component {
       { category: "politics", isSelected: true },
       { category: "other", isSelected: true },
     ],
+    move: false,
   };
   // Tester for getting appropiate wikipedia link
   search = async (woman) => {
@@ -78,7 +77,9 @@ class Homepage extends React.Component {
         <WomanList
           onWomanSelect={this.onWomanSelect}
           categorySelected={this.state.categorySelected}
+          moveState={this.state.move}
         />
+
         <Header rootClassName="header-root-class-name1"></Header>
         <Collapsible
           trigger="Select search categories"
@@ -135,8 +136,8 @@ class Homepage extends React.Component {
             </form>
           </div>
         </Collapsible>
-        {/* Conditional Rendering of WomanDetail if cliked outside */}
 
+        {/* Conditional Rendering of WomanDetail if cliked outside */}
         {this.state.selectedWoman && this.state.categorySelected ? (
           <WomanDetail
             displayedWoman={this.state.selectedWoman}
@@ -145,7 +146,18 @@ class Homepage extends React.Component {
         ) : (
           <div></div>
         )}
-        <div className="circle"></div>
+        <button onClick={() => this.setState({ move: !this.state.move })}>
+          STOP ANIMATION
+        </button>
+        <div className="circle">
+          <motion.div
+            animate={{
+              x: this.state.move ? [0, 500, 0] : null,
+              y: this.state.move ? [50, 400, 50] : null,
+            }}
+            transition={{ repeat: Infinity, duration: 3 }}
+          ></motion.div>
+        </div>
         <Footer2 rootClassName="footer2-root-class-name"></Footer2>
       </div>
     );

@@ -1,83 +1,128 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
 import "./header.css";
 import "./container_woman.css";
 
-class ContainerWoman extends React.Component {
-  state = { data: {} };
-  render() {
-    const {
-      img_alt,
-      img_src,
-      img_classname,
-      icon_alt,
-      icon_src,
-      icon_classname,
-      description,
-      link,
-      name,
-      link_classname,
-      category,
-      top,
-      left,
-      icon_width,
-      icon_height,
-      icon_top,
-      icon_left,
-      icon_styling,
-      onWomanSelect,
-      lifespan,
-      categorySelected,
-    } = this.props;
+const ContainerWoman = (props) => {
+  let {
+    img_alt,
+    img_src,
+    img_classname,
+    icon_alt,
+    icon_src,
+    icon_classname,
+    description,
+    link,
+    name,
+    link_classname,
+    category,
+    top,
+    left,
+    icon_width,
+    icon_height,
+    icon_top,
+    icon_left,
+    icon_styling,
+    onWomanSelect,
+    lifespan,
+    categorySelected,
+    moveState,
+  } = props;
 
-    const myStyling = {
-      top: `${top}`,
-      left: `${left}`,
-    };
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(30);
+  const [speedX, setSpeedX] = useState(10);
+  const [speedY, setSpeedY] = useState(10);
 
-    const myIconStyling = {
-      width: `${icon_width}`,
-      height: `${icon_height}`,
-      top: `${icon_top}`,
-      left: `${icon_left}`,
-    };
-    // Helper Function to determine the class of the woman
-    const getIconClassname = (icon_styling) => {
-      if (icon_styling === undefined) {
-        return "homepage-image-icon-woman";
-      } else {
-        return "homepage-image-icon-woman hedy-lamarr";
-      }
-    };
+  const myStyling = {
+    top: `${top}`,
+    left: `${left}`,
+  };
 
-    const iconClassname = getIconClassname(icon_styling);
+  const myIconStyling = {
+    width: `${icon_width}`,
+    height: `${icon_height}`,
+    top: `${icon_top}`,
+    left: `${icon_left}`,
+  };
+  // Helper Function to determine the class of the woman
+  const getIconClassname = (icon_styling) => {
+    if (icon_styling === undefined) {
+      return "homepage-image-icon-woman";
+    } else {
+      return "homepage-image-icon-woman hedy-lamarr";
+    }
+  };
 
-    // Make API -request for some meta-data
+  const iconClassname = getIconClassname(icon_styling);
 
-    // Get the correct index of the category the woman is in to check for
-    const getCategoryIndex = ({ category }) => {
-      if (category == "science") {
-        return 0;
-      }
-      if (category == "medicine") {
-        return 1;
-      }
-      if (category == "human") {
-        return 2;
-      }
-      if (category == "politics") {
-        return 3;
-      } else {
-        return 4;
-      }
-    };
+  // Make API -request for some meta-data
 
-    if (categorySelected[getCategoryIndex({ category })].isSelected) {
-      return (
+  // Get the correct index of the category the woman is in to check for
+  const getCategoryIndex = ({ category }) => {
+    if (category == "science") {
+      return 0;
+    }
+    if (category == "medicine") {
+      return 1;
+    }
+    if (category == "human") {
+      return 2;
+    }
+    if (category == "politics") {
+      return 3;
+    } else {
+      return 4;
+    }
+  };
+
+  const getNextPosition = () => {
+    console.log(Math.floor(Math.random() * 500));
+    return [Math.floor(Math.random() * 700), Math.floor(Math.random() * 500)];
+  };
+
+  useEffect(() => {
+    const nextPosition = getNextPosition();
+    setX(nextPosition[0]);
+    setY(nextPosition[1]);
+    console.log(nextPosition);
+    setX(nextPosition[0]);
+    setY(nextPosition[1]);
+  }, []);
+
+  if (categorySelected[getCategoryIndex({ category })].isSelected) {
+    return (
+      <motion.div
+        animate={{
+          x: moveState ? [x, 0, x] : null,
+          y: moveState ? [0, y, 0] : null,
+        }}
+        transition={{ repeat: Infinity, duration: 3 }}
+        /*onAnimationComplete={() => {
+          console.log(y, window.innerHeight);
+          setX(x + speedX);
+          setY(y + speedY);
+          if (x >= 0) {
+            setSpeedX(-10);
+          }
+          if (x <= -window.innerWidth + SVG_WIDTH) {
+            setSpeedX(10);
+          }
+
+          if (y >= window.innerHeight / 2) {
+            setSpeedY(-10);
+          }
+
+          if (y <= -window.innerHeight / 2) {
+            setSpeedY(10);
+          }
+        }}*/
+      >
         <div
           className="homepage-container-woman"
           style={myStyling}
@@ -104,22 +149,22 @@ class ContainerWoman extends React.Component {
                 <span>{description}</span>
               </p>
               {/*<a
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener"
-                className={link_classname}
-              >
-                Learn more about her here!
-          </a> */}
+              href={link}
+              target="_blank"
+              rel="noreferrer noopener"
+              className={link_classname}
+            >
+              Learn more about her here!
+        </a> */}
             </div>
           </div>
         </div>
-      );
-    } else {
-      return null;
-    }
+      </motion.div>
+    );
+  } else {
+    return null;
   }
-}
+};
 
 ContainerWoman.defaultProps = {
   img_alt: "woman_image",

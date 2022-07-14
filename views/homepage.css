@@ -699,10 +699,14 @@ input{
 }
 
 
-div.circle{
+.circle div{
   height:100px;
   width:100px;
   border-radius:50%;
   background-color: aqua;
   position:fixed;
+}
+.animation-trigger-button{
+  background-color: #d65ec5;
+  z-index: 500;
 }
