@@ -94,61 +94,81 @@ const ContainerWoman = (props) => {
     setX(nextPosition[0]);
     setY(nextPosition[1]);
   }, []);
-
+  // Constants for animation
+  const SVG_WIDTH = 1;
+  const ORIGSPEEDX = 20;
+  const ORIGSPEEDY = 20;
   if (categorySelected[getCategoryIndex({ category })].isSelected) {
+    const [x, setX] = useState(Math.floor(Math.random() * window.innerWidth));
+    const [speedX, setSpeedX] = useState(ORIGSPEEDX);
+    const [y, setY] = useState(Math.floor(Math.random() * window.innerHeight));
+    const [speedY, setSpeedY] = useState(ORIGSPEEDY);
     return (
-      <motion.div
-        animate={{
-          x: moveState ? [x, 0, x] : null,
-          y: moveState ? [0, y, 0] : null,
-        }}
-        transition={{ repeat: Infinity, duration: 3 }}
-        /*onAnimationComplete={() => {
-          console.log(y, window.innerHeight);
-          setX(x + speedX);
-          setY(y + speedY);
-          if (x >= 0) {
-            setSpeedX(-10);
-          }
-          if (x <= -window.innerWidth + SVG_WIDTH) {
-            setSpeedX(10);
-          }
+      <div className="womanAnimationContainer" id="container">
+        <motion.div
+          animate={{
+            x: moveState ? x : null,
+            y: moveState ? y : null,
+          }}
+          transition={{ ease: "linear", type: "tween", duration: 3 }}
+          onAnimationComplete={() => {
+            //console.log(y, window.innerHeight);
+            setX(
+              Math.floor(
+                Math.random() * window.innerWidth //document.getElementById("container".offsetWidth)
+              )
+            );
+            setY(
+              Math.floor(
+                Math.random() * window.innerHeight
+                //document.getElementById("container".offsetHeight)
+              )
+            );
+            {
+              /*if (x >= 0) {
+              setSpeedX(-ORIGSPEEDX);
+            }
+            if (x <= -window.innerWidth) {
+              setSpeedX(ORIGSPEEDX);
+            }
 
-          if (y >= window.innerHeight / 2) {
-            setSpeedY(-10);
-          }
+            if (y >= window.innerHeight / 2) {
+              setSpeedY(-ORIGSPEEDY);
+            }
 
-          if (y <= -window.innerHeight / 2) {
-            setSpeedY(10);
-          }
-        }}*/
-      >
-        <div
-          className="homepage-container-woman"
-          style={myStyling}
-          onClick={() => onWomanSelect(this.props)}
+            if (y <= -window.innerHeight / 2) {
+              setSpeedY(ORIGSPEEDY);
+            }
+          */
+            }
+          }}
         >
-          <img alt={img_alt} src={img_src} className={img_classname} />
-          {/*Adding multiple classes over js join*/}
           <div
-            className={[
-              "homepage-container-woman-inner",
-              "source",
-              `${category}`,
-            ].join(" ")}
+            className="homepage-container-woman"
+            style={myStyling}
+            onClick={() => onWomanSelect(this.props)}
           >
-            <img
-              alt={icon_alt}
-              src={icon_src}
-              className={`${iconClassname}`}
-              style={myIconStyling}
-            />
-            <div className="target">
-              <h1 className="homepage-text-woman-header textXL">{name}</h1>
-              <p className="homepage-text-woman-description">
-                <span>{description}</span>
-              </p>
-              {/*<a
+            <img alt={img_alt} src={img_src} className={img_classname} />
+            {/*Adding multiple classes over js join*/}
+            <div
+              className={[
+                "homepage-container-woman-inner",
+                "source",
+                `${category}`,
+              ].join(" ")}
+            >
+              <img
+                alt={icon_alt}
+                src={icon_src}
+                className={`${iconClassname}`}
+                style={myIconStyling}
+              />
+              <div className="target">
+                <h1 className="homepage-text-woman-header textXL">{name}</h1>
+                <p className="homepage-text-woman-description">
+                  <span>{description}</span>
+                </p>
+                {/*<a
               href={link}
               target="_blank"
               rel="noreferrer noopener"
@@ -156,10 +176,11 @@ const ContainerWoman = (props) => {
             >
               Learn more about her here!
         </a> */}
+              </div>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     );
   } else {
     return null;

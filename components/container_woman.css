@@ -135,7 +135,12 @@
     color: #0f0 !important;
     outline: solid #f00 1px !important;
   }*/
-
+  .womanAnimationContainer {
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+    
+  }
 
  
  
