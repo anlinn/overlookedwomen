@@ -146,7 +146,7 @@ class Homepage extends React.Component {
         ) : (
           <div></div>
         )}
-        <button onClick={() => this.setState({ move: !this.state.move })}>
+        <button className="animation-trigger-button" onClick={() => this.setState({ move: !this.state.move })}>
           STOP ANIMATION
         </button>
         <div className="circle">
