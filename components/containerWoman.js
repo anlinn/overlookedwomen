@@ -33,11 +33,7 @@ const ContainerWoman = (props) => {
     categorySelected,
     moveState,
   } = props;
-
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(30);
-  const [speedX, setSpeedX] = useState(10);
-  const [speedY, setSpeedY] = useState(10);
+  const properties = props;
 
   const myStyling = {
     top: `${top}`,
@@ -81,94 +77,65 @@ const ContainerWoman = (props) => {
     }
   };
 
-  const getNextPosition = () => {
-    console.log(Math.floor(Math.random() * 500));
-    return [Math.floor(Math.random() * 700), Math.floor(Math.random() * 500)];
-  };
-
-  useEffect(() => {
-    const nextPosition = getNextPosition();
-    setX(nextPosition[0]);
-    setY(nextPosition[1]);
-    console.log(nextPosition);
-    setX(nextPosition[0]);
-    setY(nextPosition[1]);
-  }, []);
-  // Constants for animation
-  const SVG_WIDTH = 1;
-  const ORIGSPEEDX = 20;
-  const ORIGSPEEDY = 20;
   if (categorySelected[getCategoryIndex({ category })].isSelected) {
     const [x, setX] = useState(Math.floor(Math.random() * window.innerWidth));
-    const [speedX, setSpeedX] = useState(ORIGSPEEDX);
+
     const [y, setY] = useState(Math.floor(Math.random() * window.innerHeight));
-    const [speedY, setSpeedY] = useState(ORIGSPEEDY);
+
     return (
-      <div className="womanAnimationContainer" id="container">
-        <motion.div
-          animate={{
-            x: moveState ? x : null,
-            y: moveState ? y : null,
-          }}
-          transition={{ ease: "linear", type: "tween", duration: 3 }}
-          onAnimationComplete={() => {
-            //console.log(y, window.innerHeight);
-            setX(
-              Math.floor(
-                Math.random() * window.innerWidth //document.getElementById("container".offsetWidth)
-              )
-            );
-            setY(
-              Math.floor(
-                Math.random() * window.innerHeight
-                //document.getElementById("container".offsetHeight)
-              )
-            );
-            {
-              /*if (x >= 0) {
-              setSpeedX(-ORIGSPEEDX);
-            }
-            if (x <= -window.innerWidth) {
-              setSpeedX(ORIGSPEEDX);
-            }
+      <motion.div
+        animate={{
+          x: moveState ? x : null,
+          y: moveState ? y : null,
+        }}
+        transition={{
+          ease: "linear",
+          type: "tween",
 
-            if (y >= window.innerHeight / 2) {
-              setSpeedY(-ORIGSPEEDY);
-            }
-
-            if (y <= -window.innerHeight / 2) {
-              setSpeedY(ORIGSPEEDY);
-            }
-          */
-            }
-          }}
+          duration: Math.floor(Math.random() * 5 + 2),
+        }}
+        onAnimationComplete={() => {
+          //console.log(y, window.innerHeight);
+          // Set the new x and y coordinate to random number depending on screen width
+          setX(
+            Math.floor(
+              Math.random() * window.innerWidth - window.innerWidth / 2 //document.getElementById("container".offsetWidth)
+            )
+          );
+          setY(
+            Math.floor(
+              Math.random() * window.innerHeight - window.innerHeight / 2
+              //document.getElementById("container".offsetHeight)
+            )
+          );
+        }}
+      >
+        <div
+          className="homepage-container-woman"
+          style={myStyling}
+          onClick={() => onWomanSelect(properties)}
         >
+          <img alt={img_alt} src={img_src} className={img_classname} />
+          {/*Adding multiple classes over js join*/}
           <div
-            className="homepage-container-woman"
-            style={myStyling}
-            onClick={() => onWomanSelect(this.props)}
+            className={[
+              "homepage-container-woman-inner",
+              "source",
+              `${category}`,
+            ].join(" ")}
           >
-            <img alt={img_alt} src={img_src} className={img_classname} />
-            {/*Adding multiple classes over js join*/}
-            <div
-              className={[
-                "homepage-container-woman-inner",
-                "source",
-                `${category}`,
-              ].join(" ")}
-            >
-              <img
-                alt={icon_alt}
-                src={icon_src}
-                className={`${iconClassname}`}
-                style={myIconStyling}
-              />
-              <div className="target">
-                <h1 className="homepage-text-woman-header textXL">{name}</h1>
-                <p className="homepage-text-woman-description">
-                  <span>{description}</span>
-                </p>
-                {/*<a
+            <img
+              alt={icon_alt}
+              src={icon_src}
+              className={`${iconClassname}`}
+              style={myIconStyling}
+            />
+            <div className="target">
+              <h1 className="homepage-text-woman-header textXL">{name}</h1>
+              <p className="homepage-text-woman-description">
+                <span>{description}</span>
+              </p>
+              {/*<a
               href={link}
               target="_blank"
               rel="noreferrer noopener"
@@ -176,11 +143,10 @@ const ContainerWoman = (props) => {
             >
               Learn more about her here!
         </a> */}
-              </div>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     );
   } else {
     return null;
