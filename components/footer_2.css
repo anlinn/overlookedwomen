@@ -2,7 +2,10 @@
   width: 1200px;
   height: 64px;
   display: flex;
-  /*position: relative;*/
+  position: relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:78vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -18,6 +21,8 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction:row;
+  color:white;
+  font-size:24px;
 }
 .footer_2-link {
   position: flex;

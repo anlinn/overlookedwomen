@@ -1,3 +1,7 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .homepage-container {
   width: 100%;
   display: grid;
@@ -11,6 +15,7 @@
   grid-template-rows: auto 1fr auto;
   
 }
+
 .homepage-container-patsy-mink {
   top: 102px;
   left: 452px;
@@ -605,42 +610,16 @@
 
 /* Add styling to collapsible category selection element*/
 
-.Collapsible{
-  background-color: var(--dl-color-politics-red);
-  font-size:16px;
-  text-align:right;
-  padding-right: 10px;
-  font-family: Fira Sans;
-  width: 100vw;
-  margin-right: 20px;
-  
-  
-  
-}
-.Collapsible__contentOuter{
-  
-  height: 20px;
-  line-height: 1rem;
-  font-size:16px;
-  text-align:right;
-  padding-right: 10px;
-  
-}
-.Collapsible__trigger{
-  margin-right:10px;
-  font-size:18px;
-  cursor:pointer;
-}
 
-.triggerClassName{
-  font-size:10px;
-}
-label{
+
+
+label {
   font-family: Fira Sans;
   margin-left:12px;
   font-size:16px;
   cursor:pointer;
 }
+
 input{
   margin-left: 4px;
   margin-top:10px;
@@ -648,7 +627,7 @@ input{
 }
 
 /*hide the browser custom input forms*/
-[type="checkbox"]:checked,
+/*[type="checkbox"]:checked,
 [type="checkbox"]:not(:checked) {
     position: absolute;
     left: -9999px;
@@ -697,18 +676,42 @@ input{
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+*/
 
-
-.circle div{
-  height:100px;
-  width:100px;
-  border-radius:50%;
-  background-color: aqua;
-  position:fixed;
-}
 .animation-trigger-button{
-  background-color: #d65ec5;
-  z-index: 500;
+  background-color: var(--color-button);
+  
+  z-index: 50;
+  position: absolute;
+  top:2vh;
+  right:1vw;
+  text-align:center;
+  color:white;
+  margin-left:0;
+  padding-top: 7px;
+  padding-left:10px;
+  padding-bottom: 7px;
+  padding-right:10px;
+  border-radius:4px;
+  z-index:10000;
+  font-size:16px;
+  font-weight: bold;
+  
+  
+}
+.animation-trigger-button-active{
+
+    background-color: var(--color-button-hover);
+  
+}
+
+.animation-trigger-button:hover{
+  cursor:pointer;
+  background-color: var(--color-button-hover);
+}
+
+.animation-trigger-button span{
+  color: white;
 }
 
 body {
@@ -718,9 +721,11 @@ body {
   overflow-x: hidden;
 
   max-width:100%;
-
-  
 }
+
+
+
+
 
 
 

@@ -1,14 +1,14 @@
 import React from "react";
 import axios from "axios";
-import Collapsible from "react-collapsible";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion/dist/es/index";
 import Header from "../components/header";
 import Footer2 from "../components/footer_2";
-import "./homepage.css";
+import "./homepage.scss";
 
 import WomanDetail from "../components/WomanDetails";
 import WomanList from "../components/WomanList";
+import CollapsibleSidebar from "../components/CollapsibleSidebar";
 
 class Homepage extends React.Component {
   state = {
@@ -53,19 +53,6 @@ class Homepage extends React.Component {
   }*/
 
   render() {
-    // Only render the womandetail-component if the user has clicked on a woman
-    /*let womandetail;
-    if (this.state.selectedWoman) {
-      womandetail = (
-        <WomanDetail
-          displayedWoman={this.state.selectedWoman}
-          onWomanSelect={this.onWomanSelect}
-        />
-      );
-    } else {
-      womandetail = <div></div>;
-    }*/
-
     return (
       <div className="homepage-container">
         <Helmet>
@@ -81,63 +68,9 @@ class Homepage extends React.Component {
         />
 
         <Header rootClassName="header-root-class-name1"></Header>
-        <Collapsible
-          trigger="Select search categories"
-          className="collapsible-component"
-        >
-          <div>
-            <form>
-              <label htmlFor="science-checkbox">Science</label>
-              <input
-                type="checkbox"
-                id="science-checkbox"
-                name="science-checkbox"
-                onClick={() => this.onCategorySelect(0)}
-                //label="Science"
-                defaultChecked="true"
-                className="checkbox science"
-              />
+        <CollapsibleSidebar onClickSelectCategory={this.onCategorySelect} />
 
-              <label htmlFor="medicine-checkbox">Medicine</label>
-              <input
-                type="checkbox"
-                id="medicine-checkbox"
-                name="medicine-checkbox"
-                onClick={() => this.onCategorySelect(1)}
-                defaultChecked="true"
-              />
-
-              <label htmlFor="human-checkbox">Human Rights</label>
-              <input
-                type="checkbox"
-                id="human-checkbox"
-                name="human-checkbox"
-                onClick={() => this.onCategorySelect(2)}
-                defaultChecked="true"
-              />
-
-              <label htmlFor="politics-checkbox">Politics</label>
-              <input
-                type="checkbox"
-                id="politics-checkbox"
-                name="politics-checkbox"
-                onClick={() => this.onCategorySelect(3)}
-                defaultChecked="true"
-              />
-
-              <label htmlFor="other-checkbox">Other</label>
-              <input
-                type="checkbox"
-                id="other-checkbox"
-                name="other-checkbox"
-                onClick={() => this.onCategorySelect(4)}
-                defaultChecked="true"
-              />
-            </form>
-          </div>
-        </Collapsible>
-
-        {/* Conditional Rendering of WomanDetail if cliked outside */}
+        {/* Conditional Rendering of WomanDetail if clicked outside */}
         {this.state.selectedWoman && this.state.categorySelected ? (
           <WomanDetail
             displayedWoman={this.state.selectedWoman}
@@ -146,18 +79,17 @@ class Homepage extends React.Component {
         ) : (
           <div></div>
         )}
-        <button className="animation-trigger-button" onClick={() => this.setState({ move: !this.state.move })}>
-          STOP ANIMATION
+        <button
+          className={
+            this.state.move
+              ? "animation-trigger-button"
+              : "animation-trigger-button active"
+          }
+          onClick={() => this.setState({ move: !this.state.move })}
+        >
+          {this.state.move ? "STOP ANIMATION" : "START ANIMATION"}
         </button>
-        <div className="circle">
-          <motion.div
-            animate={{
-              x: this.state.move ? [0, 500, 0] : null,
-              y: this.state.move ? [50, 400, 50] : null,
-            }}
-            transition={{ repeat: Infinity, duration: 3 }}
-          ></motion.div>
-        </div>
+
         <Footer2 rootClassName="footer2-root-class-name"></Footer2>
       </div>
     );

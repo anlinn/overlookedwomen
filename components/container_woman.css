@@ -6,7 +6,7 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #000000;
+    background-color: var(--color-background);
     overflow-x: hidden;
     overflow-y:hidden;
   }
@@ -21,6 +21,7 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: 500;
   }
 
   .homepage-container-woman-inner {
@@ -37,22 +38,22 @@
   }
 /* Add different background colors to the containers based on which category they belong to*/
   .homepage-container-woman-inner.science{
-    background-color: var(--dl-color-science-blue);
+    background-color: var(--color-science-blue);
   }
 
   .homepage-container-woman-inner.medicine{
-    background-color: var(--dl-color-medicine-white);
+    background-color: var(--color-medicine-white);
   }
 
   .homepage-container-woman-inner.human{
-    background-color: var(--dl-color-human-pink);
+    background-color: var(--color-human-pink);
   }
 
   .homepage-container-woman-inner.politics{
-    background-color: var(--dl-color-politics-red);
+    background-color: var(--color-politics-red);
   }
   .homepage-container-woman-inner.other{
-    background-color: var(--dol-color-other-light-blue);
+    background-color: var(--color-other-light-blue);
   }
 
 

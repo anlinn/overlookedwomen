@@ -1,14 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --dl-color-gray-700: #999999;
+  --color-background:#0E0B16;
   /*--dl-color-science:#5ebdd6;*/
-  --dl-color-science-blue:#22577a;
-  --dl-color-medicine-white:white;
-  --dl-color-human-pink:#996888;
-  --dl-color-politics-red:#450920;
-  --dl-color-other-light-blue: #c9d7f8;
-  --dl-color-header:#aa4465;
-  --dl-color-background-detail:#c9cad9;
-  --dl-color-gray-900: #c3c5c9ff;
+  --color-science-blue:#7572f4;
+  --color-medicine-white:#e7dfdd;
+  --color-human-pink:#CB3A93;
+  --color-politics-red:#950740;
+  --color-other-light-blue: #c9d7f8;
+  --color-sidebar:#2806a1;
+  --dl-color-background-detail:hsl(236, 17%, 82%);
+  --color-button: hsl(253, 93%, 60%);
+  --color-button-hover:#2806a1;
   --dl-size-size-unit: 1rem; 
   --dl-color-gray-black: #000000;
   --dl-color-gray-white: #FFFFFF;

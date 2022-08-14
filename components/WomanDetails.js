@@ -48,7 +48,7 @@ const WomanDetail = ({ displayedWoman, onWomanSelect }) => {
                 </div>
                 <div className="link-box">
                   <a className="link" href={displayedWoman.link}>
-                    Learn more about her here!
+                    Learn more about her !
                   </a>
                 </div>
               </div>

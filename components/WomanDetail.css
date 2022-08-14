@@ -89,40 +89,34 @@ p{
 
 /* Styling the Link*/
 .link{
-    font-size:1rem;
+    font-size:20px;
     color:var(--dl-color-header);
     position: relative;
     font-family: Fira Sans;
 }
-
-.link:after {
-    content:' → ';
+.link-box{
+    width: 100%;
+}
+.link::after {
+    content:'→';
     opacity: 0;  
     transition: 0.5s;
-    color:var(--dl-color-header)
+    color:var(--dl-color-header);
+    display:inline;
+
   }
 
-.link::before{
-    content: "";
-  position: absolute;
-  display: block;
-  width: 95%;
-  height: 0.5px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--dl-color-header);
-  transform: scaleX(0);
-  transform-origin:left;
-  transition: transform 0.3s ease;
-}
+
 
 .link:hover::before{
    transform: scale(1); 
+   padding-left: 5px;
 }
 
 .link:hover{
-    padding-right: 24px;
-    padding-left:8px;
+    padding-right:10px;
+    text-underline-position: below;
+    border-bottom: 1px solid;
   }
 
 .link:hover:after {
