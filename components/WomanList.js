@@ -1,47 +1,40 @@
 import React from "react";
 import ContainerWoman from "./containerWoman";
 import { motion } from "framer-motion";
+import { womanData } from "./woman-data";
 //import "./homepage.css";
+
 
 const WomanList = ({ onWomanSelect, categorySelected, moveState }) => {
   // move state from homepage.js
   let move = moveState;
-
+  
   return (
     <div>
-      <motion.div
-        animate={{
-          x: move ? [0, 500, 0] : null,
-          y: move ? [50, 400, 50] : null,
-        }}
-        transition={{ repeat: Infinity, duration: 3 }}
-      >
-        <ContainerWoman
-          name="Anna-Lena"
-          description="After dying from cervical cancer in 1951, cancer cells were
-                taken from here body without her prior consent. These cells were
-                studies and used extensively in medical research since they were
-                used to form the first immortalized human cell line known as the
-                HeLa line. These cells were also later used to test the polio
-                vaccine on, making it available a lot sooner thant otherwise
-                would have been possible."
-          category="medicine"
-          top="500px"
-          left="400px"
-          img_alt="Anna-Lena"
-          img_src="https://upload.wikimedia.org/wikipedia/en/d/d7/Henrietta_Lacks_%281920-1951%29.jpg"
-          img_classname="homepage-image-woman"
-          icon_alt="Polio_vaccine"
-          icon_src="/playground_assets/syringe-200h.png"
-          icon_classname="homepage-image-icon-woman"
-          link="https://en.wikipedia.org/wiki/Henrietta_Lacks"
-          link_classname="homepage-link-woman"
+      
+        {womanData.map((woman,i)=>{
+          return(
+          <ContainerWoman name={woman.name} description={woman.description} category={woman.category} top={woman.top} left={woman.left} img_alt={woman.img_alt}
+          img_src={woman.img_src}
+          img_classname={woman.img_classname} 
+          icon_alt={woman.icon_alt}
+          icon_src={woman.icon_src}
+          icon_classname={woman.icon_classname}
+          icon_width={woman.icon_width}
+          icon_height={woman.icon_height}
+          
+          
+          link={woman.link}
+          link_classname={woman.link_classname}
           onWomanSelect={onWomanSelect}
-          lifespan="2003-?"
+          lifespan={woman.lifespan}
           categorySelected={categorySelected}
           moveState={moveState}
-        ></ContainerWoman>
-      </motion.div>
+          key={i}/>)
+        })}
+
+
+      
       <ContainerWoman
         name="Patsy Mink"
         description="She was the first asian -american woman who was elected to the

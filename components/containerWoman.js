@@ -127,7 +127,7 @@ const ContainerWoman = (props) => {
             <img
               alt={icon_alt}
               src={icon_src}
-              className={`${iconClassname}`}
+              className={`${iconClassname} source`}
               style={myIconStyling}
             />
             <div className="target">
@@ -135,14 +135,6 @@ const ContainerWoman = (props) => {
               <p className="homepage-text-woman-description">
                 <span>{description}</span>
               </p>
-              {/*<a
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              className={link_classname}
-            >
-              Learn more about her here!
-        </a> */}
             </div>
           </div>
         </div>

@@ -1,0 +1,26 @@
+.gallery-page-container{
+    background-color: var(--color-background);
+    width: 100%;
+  display: grid;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--color-background);
+  margin:0;
+  grid-template-rows: auto 1fr auto;
+}
+.women-list{
+    color:white;
+}
+.women-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(450px, 1fr));
+    grid-gap: 0 10px;
+    grid-auto-rows:10px;
+
+}
+
+
+

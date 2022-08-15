@@ -30,7 +30,7 @@ const WomanDetail = ({ displayedWoman, onWomanSelect }) => {
   return (
     <div style={{ zIndex: 2000 }}>
       <Draggable>
-        <div ref={ref} className="card info">
+        <div ref={ref} className={`card info ${displayedWoman.category}`}>
           <div className="row">
             <div className="column">
               <div className="image">

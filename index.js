@@ -4,11 +4,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./style.css";
 //import styles from "semantic-ui-css/semantic.min.css";
-import Profile from "./views/profile";
-import Home from "./views/home";
-import BlogPost from "./views/blog-post";
+
 import ContactFormular from "./views/contact_formular";
 import Homepage from "./views/homepage";
+import Gallery from './views/gallery'
 
 const App = () => {
   return (
@@ -17,6 +16,7 @@ const App = () => {
         <Route exact component={ContactFormular} path="/contact_formular" />
         <Route exact component={Homepage} path="/" />
         <Route exact component={Homepage} path="/home" />
+        <Route exact component={Gallery} path="/gallery"/>
       </div>
     </Router>
   );

@@ -104,9 +104,21 @@
     object-fit: cover;
     transition: 0.3s;
   }
-  .homepage-image-icon-woman:hover {
-    opacity: 0;
+ 
+  .source:hover 
+  .target {
+    display: flex;
+
+  } 
+  .source:hover .homepage-image-icon-woman{
+    display:none;
   }
+
+  .target {
+    display: none;
+  }
+
+  
   /* Link to Wikipedia */
   .homepage-link-woman {
   font-size: 0.85rem;

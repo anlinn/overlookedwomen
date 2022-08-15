@@ -1,17 +1,43 @@
 .card.info{
     box-shadow: 0 4px 8px rgba(255,255,255,0.8);
-    background-color: var(--dl-color-background-detail);
+    background-color: var(--color-background-detail);
     transition:0.3s;
     border-radius:10px;
     width:600px;
     padding:10px;
-    margin-right:auto;
-    margin-left:auto;
+    margin:auto;
+    margin-left:5%;
     z-index: 800;
-    
+    height:500px;
+
 }
 .card.info:hover{
     box-shadow:0 8px 16px 0 rgba(255,255,255,0.8)
+}
+
+.card.info.science{
+    background-color: var(--color-science-blue);
+  }
+
+  .card.info.medicine{
+    background-color: var(--color-medicine-white);
+  }
+
+  .card.info.human{
+    background-color: var(--color-human-pink);
+  }
+
+  .card.info.politics{
+    background-color: var(--color-politics-red);
+  }
+  .card.info.other{
+    background-color: var(--color-other-light-blue);
+  }
+
+
+
+.card.info.medicine{
+    background-color: #c5cbd3;
 }
 
 
@@ -19,6 +45,7 @@
     float:left;
     width:50%;
     padding:5px;
+    
 }
 .row::after{
     content:'';
@@ -40,18 +67,20 @@
     background-color: white;
     padding:10px;
     border-radius:10px;
+    height: 450px;
 
     
 }
 .description{
-    max-height:40vh;
-    min-height:30vh;
+    max-height:450px;
+    
     content:wrap;
-    overflow-y:auto;
+    overflow-y: auto;
     overflow-x:hidden;
     border-color:#c9d7f8;
     border-width:1px;
     border-radius: 5px;
+    height:auto;
     
     
 }
@@ -123,7 +152,11 @@ p{
     opacity: 1;
     right: 10px;
   }
-  
+
+  .image{
+    width:300px;
+    height:300px;
+  }
 
 .card-image{
     max-width:250px;
@@ -131,7 +164,9 @@ p{
     height:auto;
     margin-right:auto;
     margin-left:auto;
-    border-radius:10px;
+    border-radius:10%;
+    margin-top:20%;
+
 }
 
 
