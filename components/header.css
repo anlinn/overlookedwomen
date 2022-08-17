@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 .header-icon {
-  fill: var(--dl-color-gray-900);
+  fill: white;
   width: 13px;
 }
 .header-text {

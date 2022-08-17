@@ -3,15 +3,12 @@
     background-color: var(--color-background-detail);
     transition:0.3s;
     border-radius:10px;
-    width:600px;
+    width:500px;
     padding:10px;
-    margin:auto;
-    margin-left:5%;
-    z-index: 800;
+    margin-left:2%;
+    margin-bottom:2%;
     height:500px;
     justify-content: center;
-    position:relative;
- 
 
 }
 .card.info:hover{
@@ -43,6 +40,10 @@
     background-color: #c5cbd3;
 }
 
+#faith-spotted-eagle.row.column.content.header{
+    font-size: 10px;
+}
+
 .row{
     position: absolute;
     background-color:hsl(169, 100%, 98%) ;
@@ -52,7 +53,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    height:90%;
+    height:80%;
     
 }
 
@@ -60,7 +61,7 @@
     float:left;
     width:50%;
     padding:3px;
-    max-height: 400px;
+    max-height: 90%;
     
 }
 .row::after{
@@ -110,20 +111,27 @@ p{
     line-height: 1.2;
     margin: 3px 3px 5px 3px;
     font-family: Fira Sans;
-    max-height: 300px;
+    max-height: 250px;
 
 }
 
 .header{
-    font-size:1.8rem;
+    font-size:28px;
     color:var(--dl-color-header);
     font-family: Fira Sans;
     max-height:20px;
 }
 
+.meta{
+    position: relative;
+    margin-left: 0;
+    font-size: 18px;
+    color: var(--color-button)
+}
+
 /* Styling the Link*/
 .link{
-    font-size:20px;
+    font-size:18px;
     color:var(--dl-color-header);
     position: relative;
     margin-left:3px;
@@ -160,22 +168,17 @@ p{
   }
 
   .image{
-    width:300px;
-    height:300px;
+    max-width:200px;
+    max-height:220px;
   }
 
 .card-image{
     max-width:250px;
     width:100%;
     height:auto;
-    margin-right:auto;
-    margin-left:auto;
+    margin-right:10px;
+    margin-left:10px;
     border-radius:10%;
     margin-top:20%;
 
 }
-
-
-
-
-

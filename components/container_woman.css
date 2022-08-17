@@ -93,13 +93,15 @@
     left: 0px;
     width: 150px;
   }
+
+  
   /*For the icon image*/
   .homepage-image-icon-woman {
     top: 7px;
     left: 16px;
-    width: 117px;
+    max-width: 150px;
     height: 122px;
-    z-index: 106;
+    z-index: 10;
     position: absolute;
     object-fit: cover;
     transition: 0.3s;
@@ -128,7 +130,7 @@
   line-height: 1.1;
   text-decoration: none;
   }
-  .a.homepage-link-woman:hover {
+  .homepage-link-woman:hover {
   color: #d671d6;
   }
 

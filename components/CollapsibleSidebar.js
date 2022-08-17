@@ -34,8 +34,8 @@ const CollapsibleSidebar = ({ onClickSelectCategory }) => {
                   return (
                     <div className="sidebar-text">
                       <label htmlFor={category.name}>
-                        <span>{category.label}</span>
-                      </label>
+      
+                      
                       <input
                         type="checkbox"
                         id={category.id}
@@ -43,6 +43,8 @@ const CollapsibleSidebar = ({ onClickSelectCategory }) => {
                         onClick={() => onClickSelectCategory(index)}
                         defaultChecked="true"
                       />
+                    <span>{category.label}</span>
+                      </label>
                     </div>
                   );
                 })}

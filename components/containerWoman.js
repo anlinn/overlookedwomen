@@ -9,25 +9,16 @@ import "./header.css";
 import "./container_woman.css";
 
 const ContainerWoman = (props) => {
+  
   let {
     img_alt,
     img_src,
-    img_classname,
     icon_alt,
     icon_src,
-    icon_classname,
     description,
     link,
     name,
-    link_classname,
     category,
-    top,
-    left,
-    icon_width,
-    icon_height,
-    icon_top,
-    icon_left,
-    icon_styling,
     onWomanSelect,
     lifespan,
     categorySelected,
@@ -35,27 +26,7 @@ const ContainerWoman = (props) => {
   } = props;
   const properties = props;
 
-  const myStyling = {
-    top: `${top}`,
-    left: `${left}`,
-  };
-
-  const myIconStyling = {
-    width: `${icon_width}`,
-    height: `${icon_height}`,
-    top: `${icon_top}`,
-    left: `${icon_left}`,
-  };
-  // Helper Function to determine the class of the woman
-  const getIconClassname = (icon_styling) => {
-    if (icon_styling === undefined) {
-      return "homepage-image-icon-woman";
-    } else {
-      return "homepage-image-icon-woman hedy-lamarr";
-    }
-  };
-
-  const iconClassname = getIconClassname(icon_styling);
+ 
 
   // Make API -request for some meta-data
 
@@ -81,7 +52,7 @@ const ContainerWoman = (props) => {
     const [x, setX] = useState(Math.floor(Math.random() * window.innerWidth));
 
     const [y, setY] = useState(Math.floor(Math.random() * window.innerHeight));
-
+    
     return (
       <motion.div
         animate={{
@@ -111,11 +82,11 @@ const ContainerWoman = (props) => {
         }}
       >
         <div
-          className="homepage-container-woman"
-          style={myStyling}
+          className={`homepage-container-woman ${name.toLowerCase()}`}
+        
           onClick={() => onWomanSelect(properties)}
         >
-          <img alt={img_alt} src={img_src} className={img_classname} />
+          <img alt={img_alt} src={img_src} className={`homepage-image-woman ${name.toLowerCase()}`} />
           {/*Adding multiple classes over js join*/}
           <div
             className={[
@@ -127,8 +98,7 @@ const ContainerWoman = (props) => {
             <img
               alt={icon_alt}
               src={icon_src}
-              className={`${iconClassname} source`}
-              style={myIconStyling}
+              className={`homepage-image-icon-woman source ${name.toLowerCase()}`}
             />
             <div className="target">
               <h1 className="homepage-text-woman-header textXL">{name}</h1>

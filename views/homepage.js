@@ -20,7 +20,7 @@ class Homepage extends React.Component {
       { category: "politics", isSelected: true },
       { category: "other", isSelected: true },
     ],
-    move: false,
+    move: true,
   };
   // Tester for getting appropiate wikipedia link
   search = async (woman) => {
@@ -38,6 +38,7 @@ class Homepage extends React.Component {
   onWomanSelect = (woman) => {
     this.setState({ selectedWoman: woman });
     this.search(woman);
+    
   };
   // Update the appropiate entry in the Category-State on button press
   onCategorySelect = (index) => {
