@@ -12,7 +12,7 @@ const data=["jim","mary","lilliputh"]
 const Gallery =()=>{
     const womanListed =womanData.map((woman,i)=>{
         return(
-            <div className="card">
+            <div className="gallery-card">
            <GalleryWomanDetail displayedWoman={woman} key={i}/>
            </div>
         )
